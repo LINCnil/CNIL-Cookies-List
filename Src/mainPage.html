@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="cookies.css"/>
+  </head>
+
+  <body>
+	<title>CNIL - Cookies List</title>
+    	
+	  <div><img border="0" src="logos/logo-Cnil.jpg" alt="" align="absmiddle" width=200/> <span style="vertical-align:middle;">Cookies List</span></div>
+		
+	  <table id="cookies-tab" border="2">
+	  <caption><span id=nbCookies></span> cookies enregistrés dans le navigateur le <span id="date"></caption>
+	  <tr><th>N°</th><th>Chemin</th><th>Nom<br><span title="Seuls les 50 premiers caractères sont affichés">Valeur</span></th><th>Date<br>d'expiration</th><th><span title="host-only : cookie inaccessible par les scripts clients, secure : cookie transmis uniquement si le canal est chiffré">Restrictions</span></th></tr>
+	  
+	  </table>
+	  	  
+    <script src="listCookies.js"></script>
+  </body>
+
+</html>
