@@ -15,6 +15,10 @@ Utilisation
 --
 
 Une fois installée, une icône apparaît dans la barre du navigateur, en cliquant sur celle ci, une page s'ouvre et liste les cookies présents dans la navigateur.
+
+Le bouton "Enregistrer" permet de stocker une version au format PDF de la page ainsi qu'un fichier au format CSV dans le répertoire "Téléchargement"
+
+Le bouton "Effacer les cookies" efface l'ensemble des cookies tandis que les boutons "Effacer" situés sur chaque ligne permettent d'effacer chaque cookie individuellement.
 	
 Licence
 --

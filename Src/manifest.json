@@ -19,8 +19,8 @@
   },
   "manifest_version": 2,
   "name": "CNIL - Cookies List",
-  "version": "1.0.0",
-  "permissions": ["cookies","<all_urls>","tabs"],
+  "version": "2.1.0",
+  "permissions": ["cookies","<all_urls>","tabs","storage","downloads"],
   
    "background": {"scripts": ["start.js"]}
 }
