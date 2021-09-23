@@ -9,7 +9,7 @@ Installation
 Pour installer cette extension :
 	- télécharger l'extension depuis le répertoire ``release``
 	- depuis Firefox, ouvrir le menu "Modules complémentaires"
-	- cliquer sur l'icône "outils" puis "installer un module depuis un fichier... et sélectionner l'extention que vous venez de télécharger
+	- cliquer sur l'icône "outils" puis "installer un module depuis un fichier... et sélectionner l'extension que vous venez de télécharger
 
 Utilisation
 --
