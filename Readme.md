@@ -7,9 +7,12 @@ Installation
 --
 
 Pour installer cette extension :
-	- télécharger l'extension depuis le répertoire ``release`` ou directement depuis l'URL https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/cnil_cookies_list-2.1.0-fx.xpi)
-	- depuis Firefox, ouvrir le menu "Modules complémentaires"
-	- cliquer sur l'icône "outils" puis "installer un module depuis un fichier... et sélectionner l'extension que vous venez de télécharger
+
+- télécharger l'extension depuis le répertoire ``release`` ou directement depuis l'URL https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/cnil_cookies_list-2.1.0-fx.xpi)
+
+- depuis Firefox, ouvrir le menu "Modules complémentaires"
+
+- cliquer sur l'icône "outils" puis "installer un module depuis un fichier... et sélectionner l'extension que vous venez de télécharger
 
 Utilisation
 --
