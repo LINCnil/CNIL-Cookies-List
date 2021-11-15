@@ -65,12 +65,20 @@ function listCookies()
 	{		
 		// Ancrage sur la balise du tableau
 		var cookieTab = document.getElementById('cookies-tab');
+		var nbElem = document.getElementById('nbCookies');
+		var ck_len = cookies.length;
 	
-		if (cookies.length > 0) 
+		if (ck_len > 0) 
 		{
 			// Affichage date du jour dans 'date'
-			var nbElem = document.getElementById('nbCookies');	
-			nbElem.appendChild(document.createTextNode(cookies.length +" "));
+			nbElem.textContent = ck_len;
+
+      if (ck_len > 1) {
+          var cs_1 = document.getElementById('cookiesPlural_1');
+          cs_1.textContent = "s";
+          var cs_2 = document.getElementById('cookiesPlural_2');
+          cs_2.textContent = "s";
+      }
 			
 			// Tri des cookies par Domain/Path
 			//
@@ -241,11 +249,12 @@ function listCookies()
 		else 
 		{
 			// Pas de cookie
+			nbElem.textContent = "Zéro";
 			let tabLig = document.createElement("tr");
 			tabCel = document.createElement("td");
 			tabCel.colSpan = "5"
 			tabCel.style = "font-weight : bold"
-			tabCel.appendChild(document.createTextNode("Pas de cookies enregistrés dans le navigateur"));
+			tabCel.appendChild(document.createTextNode("Pas de cookie enregistré dans le navigateur"));
 								
 			tabLig.appendChild(tabCel);
 			

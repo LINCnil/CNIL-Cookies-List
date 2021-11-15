@@ -1,0 +1,41 @@
+#btnAction {
+    width: 50%;
+    text-align: center;
+    font-size: small;
+    font-family: sans-serif;
+}
+
+#btnExportXLS {
+    margin-right: 10%;
+}
+
+header {
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+button {
+    display: inline-block;
+}
+
+table {
+    border: medium solid #6495ed;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th {
+    font-family: monospace;
+    border: thin solid #6495ed;
+    padding: 5px;
+    background-color: #D0E3FA;
+}
+
+td {
+    font-family: monospace;
+    border: thin solid #6495ed;
+    padding: 5px;
+    text-align: left;
+    background-color: #ffffff;
+    font-size: 12px;
+}
