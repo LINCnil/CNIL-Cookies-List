@@ -1,0 +1,26 @@
+{
+    "action": {
+        "default_title": "CNIL - Cookies List",
+        "default_icon": {
+            "1024": "icons/cookie1024.png"
+        }
+    },
+  
+    "author": "CNIL - Service des contrôles",
+
+    "description": "Liste les cookies enregistrés dans le navigateur.",
+    "icons": {
+	   "1024": "icons/cookie1024.png"
+    },
+    
+    "manifest_version": 3,
+    "name": "CNIL - Cookies List",
+    "version": "3.0.1",
+    "permissions": ["cookies", "tabs", "activeTab", "storage", "downloads"],
+    "host_permissions": ["<all_urls>"],
+  
+    "background": {
+        "service_worker": "start.js",
+        "type": "module"
+    }
+}

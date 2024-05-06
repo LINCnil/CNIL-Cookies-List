@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="cookies.css"/>
+    <link rel="icon" type="image/png" href="/icons/cookie1024.png"/>
+    <script src="listCookies.js"></script>
+    <title>CNIL — Cookies List</title>
+</head>
+
+<body>
+    <div id="header" style="clear: both;">
+        <img id="logoCnil" src="icons/logo_cnil.svg"/>
+        <h1 id="appName">Cookies List ⋅ <i>Liste des cookies</i></h1>
+    </div>
+
+    <hr/>
+
+    <div id="btnAction">
+        <button class="noPrint" id="btnExportPDF">Exporter (PDF)</button>
+        <button class="noPrint" id="btnExportCSV">Exporter (CSV)</button>
+        <button class="noPrint" id="btnEffCookies">Tout effacer</button>
+        <h2>
+            <span id=nbCookies></span> cookie<span id="cookiesPlural_1"></span> enregistré<span id="cookiesPlural_2"></span> dans le navigateur (<span id="date"></span>)
+        </h2>
+    </div>
+
+    <table id="cookiesTab" border="2">
+        <thead>
+            <th style="width: 5%">N<sup>o</sup></th>
+            <th style="width: 10%">Chemin</th>
+            <th style="width: 55%">Nom<br><span>Valeur</span></th>
+            <th style="width: 5%">Date<br>d'expiration</th>
+            <th style="width: 10%">sameSite</th>
+            <th style="width: 5%">httpOnly</th>
+            <th style="width: 5%">hostOnly</th>
+            <th style="width: 5%">isSecure</th>
+        </thead>
+    </table>
+
+</body>
+</html>
