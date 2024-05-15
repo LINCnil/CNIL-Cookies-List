@@ -1,0 +1,108 @@
+body {
+    font-family: sans-serif;
+}
+
+#header {
+    overflow: hidden;
+    padding: 20px;
+}
+
+#appName {
+    float: right;
+}
+
+#logoCnil {
+    width: 150px;
+    float: left;
+}
+
+@media print
+{    
+    .noPrint, .noPrint *
+    {
+        display: none !important;
+    }
+}
+
+#btnAction {
+    text-align: center;
+}
+
+button {
+    color: white;
+    padding: 15px 32px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+#btnExportPDF, #btnExportCSV {
+    background-color: #6495ed;
+    border: 2px solid #6495ed;
+}
+
+#btnEffCookies {
+    background-color: #F95738;
+    border: 2px solid #F95738;
+}
+
+#btnExportPDF:hover, #btnExportCSV:hover, #btnEffCookies:hover {
+    background-color: white;
+    color: black;
+}
+
+#cookiesTab {
+    max-width: 100%;
+    table-layout: fixed;
+    border: medium solid #6495ed;
+    border-collapse: collapse;
+    font-family: monospace;
+}
+
+th {
+    font-family: monospace;
+    border: thin solid #6495ed;
+    padding: 5px;
+    background-color: #D0E3FA;
+}
+
+.domainName {
+    font-weight: bold;
+}
+
+.wrap {
+    word-break: break-all;
+}
+
+td {
+    border: thin solid #6495ed;
+    padding: 5px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.cookieActionButtons {
+    float: right;
+}
+
+.actionIcon {
+    cursor: pointer;
+    transition: filter 0.1s ease;
+}
+
+.actionIcon:hover {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+}
+
+.action {
+    text-align: center;
+}
+
+.property {
+    text-align: center;
+}
