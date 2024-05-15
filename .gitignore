@@ -1,0 +1,5 @@
+release/
+build/
+*.xpi
+*.crx
+*.pem
