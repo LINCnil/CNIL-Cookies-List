@@ -16,7 +16,7 @@
     "manifest_version": 3,
     "name": "CNIL - Cookies List",
     "version": "3.0.1",
-    "permissions": ["cookies", "tabs", "activeTab", "storage", "downloads"],
+    "permissions": ["cookies", "tabs", "downloads"],
     "host_permissions": ["<all_urls>"],
   
     "background": {
