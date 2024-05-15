@@ -3,7 +3,7 @@ firefox: manifests/manifest-fx.json
 	rm -rf build/firefox/* release/firefox-*
 	cp manifests/manifest-fx.json build/firefox/manifest.json
 	cp -r src/* build/firefox/
-	zip -r release/firefox-not-signed.zip build/firefox/
+	cd build/firefox; zip -r ../../release/firefox-not-signed.zip .
 
 chrome: manifests/manifest-cr.json
 	mkdir -p build/chrome release/
