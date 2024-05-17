@@ -27,7 +27,9 @@ Pour tester une version de travail de l'extension :
 
 # Chromium
 
-En exécutant `make chrome` depuis la racine du dépôt, un répertoire `build/chrome` est créé contenant les fichiers sources et un fichier d'extension au format CRX, ainsi qu'une clef privée au format PEM, sont créées dans `release/`. Ce fichier CRX **ne peut pas** être chargé directement dans la version Windows de Chromium a défaut d'avoir été publié sur le Chrome Web Store.
+En exécutant `make chrome` depuis la racine du dépôt, un répertoire `build/chrome` est créé contenant les fichiers sources et un fichier d'extension CRX est créé dans `release/`. Ce fichier CRX **ne peut pas** être chargé directement dans la version Windows de Chromium a défaut d'avoir été publié sur le Chrome Web Store.
+
+Le paquet généré est signé au moyen d'une clef RSA. L'identifiant du fichier CRX publié par la CNIL dans les *Releases* du présent dépôt est `fejljjffnkkeabbgokmalgbamkdobekb`.
 
 Pour installer l'extension **dans Chromium pour Linux uniquement** :
 

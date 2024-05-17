@@ -3,3 +3,5 @@ build/
 *.xpi
 *.crx
 *.pem
+pubkey.b64.txt
+manifests/manifest-cr-pub.json
