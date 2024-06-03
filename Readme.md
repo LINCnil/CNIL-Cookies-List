@@ -9,6 +9,8 @@ Le même code source est utilisé pour générer les extensions à destination d
 
 En exécutant `make firefox` depuis la racine du dépôt, un répertoire `build/firefox` est créé contenant les fichiers sources et une archive de ce répertoire est créée dans `release/`. Cette archive **ne peut pas** être chargée directement dans le navigateur a défaut d'avoir été préalablement signée.
 
+L'identifiant du fichier XPI publié par la CNIL dans les *Releases* du présent dépôt est `{2dd82d77-e6d9-4609-93e3-0df9f7d7ce04}`.
+
 Pour installer l'extension :
 
 1. télécharger le fichier XPI publié dans les *Releases*
@@ -23,7 +25,7 @@ Pour tester une version de travail de l'extension :
 3. cliquer sur le bouton « Charger un module complémentaire temporaire… »
 4. sélectionner le fichier `build/firefox/manifest.json`
 
-*Attention, il est possible que l'extension ne dispose pas alors de certaines permissions nécessaires à son fonctionnement. Il vous faut alors les ajouter manuellement, en particulier dans l'onglet « Permissions » de l'écran de gestion de l'extension, il faut que l'option « Accéder à vos données pour tous les sites web » soient cochée.*
+*Attention, il est possible que l'extension ne dispose pas alors de certaines permissions nécessaires à son fonctionnement. Il vous faut alors les ajouter manuellement, en particulier dans l'onglet « Permissions » de l'écran de gestion de l'extension, il faut que l'option « Accéder à vos données pour tous les sites web » soit cochée.*
 
 # Chromium
 
