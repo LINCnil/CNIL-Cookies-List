@@ -181,7 +181,7 @@ function createCookieActionButtons(cookie) {
     return spanactionbuttons
 }
 
-function deleteCookie (cookie, refresh, confirme=true) {
+function deleteCookie(cookie, refresh, confirme=true) {
     let cookieName = cookie.name;
     let cookieProtocol = cookie.secure ? "https://" : "http://";
     let cookieUrl = cookieProtocol + cookie.domain + cookie.path;
@@ -204,7 +204,7 @@ function suppressAllCookies() {
         var gettingAllCookies = chrome.cookies.getAll({});
         gettingAllCookies.then((cookies) => {
             for (let cookie of cookies) {
-                SuppressCookie (cookie, false, false);
+                deleteCookie(cookie, false, false);
             }
 
             chrome.tabs.reload();
