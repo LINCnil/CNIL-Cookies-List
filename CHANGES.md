@@ -25,3 +25,7 @@
 ### Version 3.0.2, 15 mai 2024
 
 - Retrait de permissions inutiles pour l'extension
+
+### Version 3.0.4, 3 juin 2024
+
+- Correction d'un bug empêchant le fonctionnement du bouton "Tout supprimer"
