@@ -10,6 +10,53 @@ filename = filename.replaceAll(":", ".");
 var file_content = "Num;Domaine;Chemin;Nom;Valeur;Expiration;sameSite;httpOnly;hostOnly;isSecure\r\n";
 let cookiestab;
 
+// --- Helpers contexte actif ---
+async function getActiveHost() {
+    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    const tab = tabs && tabs[0];
+    if (!tab || !tab.url) return null;
+    try {
+        return new URL(tab.url).hostname; // ex: www.cnil.fr
+    } catch {
+        return null;
+    }
+}
+
+// Conversion simple vers eTLD+1 (sans PSL). Suffit dans la majorité des cas.
+function toBaseDomain(host) {
+    if (!host) return null;
+    const parts = host.split('.');
+    if (parts.length >= 2) return parts.slice(-2).join('.');
+    return host;
+}
+
+function setContextLabel(label) {
+    const el = document.getElementById("activeContext");
+    if (el) el.textContent = label;
+}
+
+function clearCookiesTable() {
+    cookiestab = document.getElementById("cookiesTab");
+    while (cookiestab.firstChild) cookiestab.removeChild(cookiestab.firstChild);
+}
+
+async function listCookiesContextual() {
+    const host = await getActiveHost();
+    let cookies = [];
+    if (host) {
+        const base = toBaseDomain(host);
+        cookies = await chrome.cookies.getAll({ domain: base });
+       setContextLabel(base);
+    } else {
+        cookies = await chrome.cookies.getAll({});
+        setContextLabel("tous les domaines");
+    }
+    lCookies = cookies;
+    clearCookiesTable();
+    insertCookiesInTab(lCookies);
+}
+
+
 window.onload = function() {
     document.getElementById("date").textContent = DATENOW.toLocaleString();
     document.getElementById("btnEffCookies").addEventListener("click", suppressAllCookies);
@@ -21,20 +68,38 @@ window.onload = function() {
     // Tableau contenant les cookies listés sur la page
     cookiestab = document.getElementById("cookiesTab");
 
-    // Affichage des cookies
-    listCookies();
+    // Affichage contextualisé (site actif)
+    listCookiesContextual();
+
+    // Bouton Actualiser
+    const btnRefresh = document.getElementById("btnRefresh");
+    if (btnRefresh) {
+        btnRefresh.addEventListener("click", listCookiesContextual);
+    }
+
+    // Bouton Voir tous les cookies (profil)
+    const btnShowAll = document.getElementById("btnShowAll");
+    if (btnShowAll) {
+        btnShowAll.addEventListener("click", async () => {
+            const cookies = await chrome.cookies.getAll({});
+            setContextLabel("tous les domaines");
+            clearCookiesTable();
+            insertCookiesInTab(cookies);
+        });
+    }
 };
 
+// Ancienne listCookies() conservée si besoin d’un fallback
 /*
  * Écrit la liste des cookies dans le tableau HTML
  */
-function listCookies() {
-    var gettingAllCookies = chrome.cookies.getAll({});
-    gettingAllCookies.then((cookies) => {
-        lCookies = cookies;
-        insertCookiesInTab(lCookies);
-    });
-}
+//function listCookies() {
+//    var gettingAllCookies = chrome.cookies.getAll({});
+//    gettingAllCookies.then((cookies) => {
+//        lCookies = cookies;
+//        insertCookiesInTab(lCookies);
+//    });
+//}
 
 function insertCookiesInTab(cookies) {
     let nbCookies = cookies.length;
@@ -184,8 +249,8 @@ function createCookieActionButtons(cookie) {
 function deleteCookie(cookie, refresh, confirme=true) {
     let cookieName = cookie.name;
     let cookieProtocol = cookie.secure ? "https://" : "http://";
-    let cookieUrl = cookieProtocol + cookie.domain + cookie.path;
-
+    const domainForUrl = (cookie.domain && cookie.domain.startsWith(".")) ? cookie.domain.slice(1) : cookie.domain;
+    let cookieUrl = cookieProtocol + domainForUrl + cookie.path;
     if (!confirme || window.confirm("Effacer le cookie '" + cookieName + "' ?")) { 
         var removing = chrome.cookies.remove({
             url: cookieUrl,
