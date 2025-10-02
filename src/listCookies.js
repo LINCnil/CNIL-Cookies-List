@@ -124,7 +124,7 @@ function createCookieRow(cookie, cntr) {
     expcell.setAttribute("class", "property");
     if (cookie.hasOwnProperty("expirationDate")) {
         expcell.textContent = (new Date(cookie.expirationDate * 1000)).toLocaleString();
-    } else if (cookie.session = true) {
+    } else if (cookie.session === true) {
         expcell.textContent = "session";
     } else {
         expcell.textContent = "/";
