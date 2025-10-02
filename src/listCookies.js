@@ -243,3 +243,10 @@ function onRemoved(cookie) {
 function onDownloadFailed(error) {
   console.log(`Download failed: ${error}`);
 }
+
+// Optionnel: recharger la liste à chaque fin de chargement d’onglet (pratique après opt-out + reload)
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === "complete") {
+        listCookiesContextual();
+    }
+});
